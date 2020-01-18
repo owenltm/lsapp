@@ -6,15 +6,19 @@
 
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
-    <title>{{config('app.name', 'LSAPP')}}</title>
+        <title>{{config('app.name', 'LSAPP')}}</title>
 
     </head>
     <body>
-        @include('inc.navbar');
-
-
+        @include('inc.navbar')
         <div class="container">
+            @include('inc.messages')
             @yield('content')
         </div>
+
+        <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace( 'body-ckeditor' );
+        </script>
     </body>
 </html>
